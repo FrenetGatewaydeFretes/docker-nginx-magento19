@@ -58,7 +58,7 @@ create database magento1;
 
 Or you can copy the file **local.xml** on the root directory into the magento source folder **app/etc/local.xml**
 
-If you prefer to use the sample data, I have a repository to provide it:
+If you prefer to use the sample data, This is a repository to provide it:
 
 [magento1.9.3.4-CE-with-sample-data](https://github.com/linxiaobo/magento1.9.3.4-CE-with-sample-data)
 
