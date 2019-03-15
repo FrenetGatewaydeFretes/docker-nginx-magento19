@@ -60,7 +60,7 @@ Or you can copy the file **local.xml** on the root directory into the magento so
 
 If you prefer to use the sample data, I have a repository to provide it:
 
-https://github.com/linxiaobo/magento1.9.3.4-CE-with-sample-data
+[magento1.9.3.4-CE-with-sample-data](https://github.com/linxiaobo/magento1.9.3.4-CE-with-sample-data)
 
 Put the **sample-db** folder to the folder **/mysql**
 
