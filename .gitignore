@@ -1,4 +1,5 @@
 .idea/
 /docker/logs/*
 /docker/mysql/data/*
+/docker/mysql/sample-db/*
 /src/local.m1docker.com/*

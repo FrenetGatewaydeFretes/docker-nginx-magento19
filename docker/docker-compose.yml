@@ -10,7 +10,7 @@ nginx:
     - ../src:/var/www/html
     # nginx configs
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-    - ./nginx//conf.d/:/etc/nginx/conf.d/:ro
+    - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
     - ./logs/nginx:/var/log/nginx
 
 phpfpm:
@@ -39,3 +39,15 @@ mysql:
     MYSQL_DATABASE: magento1
     MYSQL_USER: magento1
     MYSQL_PASSWORD: 123456
+
+#phpmyadmin:
+#  image: phpmyadmin/phpmyadmin
+#  restart: always
+#  links:
+#  - mysql
+#  ports:
+#  - 8183:8080
+#  environment:
+#    PMA_USER: root
+#    PMA_PASSWORD: secret_password
+#    PMA_ARBITRARY: 1
