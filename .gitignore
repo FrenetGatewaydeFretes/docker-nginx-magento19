@@ -1,0 +1,4 @@
+.idea/
+/docker/logs/*
+/docker/mysql/data/*
+/src/local.m1docker.com/*
