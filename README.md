@@ -1,6 +1,10 @@
 # Magento 1.9 Docker Container
 
-This Docker container is forked from [andregugliotti/docker-magento19](https://github.com/andregugliotti/docker-magento19)
+This Docker container is forked from [andregugliotti/docker-magento19](https://github.com/andregugliotti/docker-magento19), I made some changes to suit my usage habits. which like:
+* multiple sites
+* php.ini on local computer for easier customized
+* not include the source code (clone faster)
+* failure up the container `phpmyadmin`
 
 It build with support to `Nginx`, `PHP 5.6` (built with PHP FPM) and `MySQL 5.7`. It is also shipped with `PHPMyAdmin` and `xDebug`. Additionally, you can enable support for ionCube Loader, uncommenting the right lines at _docker-magento19/php/Dockerfile_.
 
