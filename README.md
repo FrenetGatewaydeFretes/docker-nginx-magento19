@@ -25,10 +25,9 @@ Here you should create a database named **magento1**
 
 The container phpmyadmin should work, but if you have multiple containers use phpmyadmin, you might have issue.
 
-For me, I can't make phpmyadmin installed. so I just go to https://www.phpmyadmin.net/downloads/ to download and put it into **/src**
-to make it work. 
+For me, I have many docker environment and can't make phpmyadmin installed. **(if you would like to help me, please feel free to create pull requests, many thanks :))** so I just go to https://www.phpmyadmin.net/downloads/ to download and put it into **/src**. It also works. 
 
-Of cource, if you install phpmyadmin in this way, just comment / remove the phpmyadmin container in the docker-compose.yml file.
+Of cource, if you install phpmyadmin this way, remember to comment / remove the phpmyadmin container in the docker-compose.yml file.
 
 ### Create database
 
