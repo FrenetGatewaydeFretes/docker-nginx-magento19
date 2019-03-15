@@ -19,6 +19,13 @@ Just open your terminal and navigate to docker-magento19 of this project. Type:
 
 Docker will build the containers and start them. You must also map the address _127.0.0.1 local.m1docker.com_ on your hosts file. If you don't know how to do that, just google it. It's easy!
 
+### About phpmyadmin 
+
+Here you should create a database named **magento1**
+The container phpmyadmin should work, but if you have multiple containers use phpmyadmin, you might have some issus.
+For me, I can't make phpmyadmin installed. so I just go to https://www.phpmyadmin.net/downloads/ to download and put it into **/src**
+to make it work. of cource, if you install phpmyadmin in this way, just comment / remove the phpmyadmin container in the docker-compose.yml file.
+
 ### First access to project site
 
 **Before accessing the Magento site**, you must decide if you want to use the sample data or use a clean install.
