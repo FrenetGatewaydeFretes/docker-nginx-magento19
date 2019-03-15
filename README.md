@@ -14,12 +14,12 @@ Just clone the files into your project folder. It contains a Magento 1.9.3.4 CE 
 
 There are three folders:
 
-- docker-magento19 - that is the folder for Docker files
+- docker - that is the folder for Docker files
 - src - that is the root folder, where Magento source files should in here as a folder (here this container can set multiple sites)
 
 ### Starting the container
 
-Just open your terminal and navigate to docker-magento19 of this project. Type:
+Just open your terminal and navigate to foler `docker` of this project. Type:
 
 `docker-compose up -d`
 
@@ -27,19 +27,17 @@ Docker will build the containers and start them. You must also map the address _
 
 ### About phpmyadmin 
 
-Here you should create a database named **magento1**
+The container phpmyadmin should work, but if you have multiple containers to use phpmyadmin, you might have issue.
 
-The container phpmyadmin should work, but if you have multiple containers use phpmyadmin, you might have issue.
+For me, I have many docker environment and can't make phpmyadmin installed successfully. **(if you would like to help me, please feel free to create pull requests, many thanks :))** so I just go to https://www.phpmyadmin.net/downloads/ to download and put it into **/src**. It also works. 
 
-For me, I have many docker environment and can't make phpmyadmin installed. **(if you would like to help me, please feel free to create pull requests, many thanks :))** so I just go to https://www.phpmyadmin.net/downloads/ to download and put it into **/src**. It also works. 
-
-Of cource, if you install phpmyadmin this way, remember to comment / remove the phpmyadmin container in the docker-compose.yml file.
+Of cource, if you install phpmyadmin by put it into `src` folder, remember to comment / remove the phpmyadmin container in the docker-compose.yml file.
 
 ### Create database
 
 Here you should create a database named **magento1**
 
-If you want to install it by CLI:
+If you want to install it by CLI, we should into the mysql container first:
 ```
 docker-compose exec mysql bash
 
