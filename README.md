@@ -10,7 +10,6 @@ There are three folders:
 
 - docker-magento19 - that is the folder for Docker files
 - src - that is the root folder, where Magento source files should in here as a folder (here this container can set multiple sites)
-- project - that is the project folder, where you should work
 
 ### Starting the container
 
@@ -26,9 +25,20 @@ Docker will build the containers and start them. You must also map the address _
 
 Or you can copy the file **local.xml** on the root directory into the magento source folder **app/etc/local.xml**
 
-`- local.xml:/var/www/htdocs/etc/local.xml`
+If you prefer to use the sample data, I have a repository to provide it:
 
-If you prefer to use the sample data, you must import it via mysql command. 
+https://github.com/linxiaobo/magento1.9.3.4-CE-with-sample-data
+
+Put the **sample-db** folder to the folder **/mysql**
+
+Why? because in the **docker-compose.yml** we use Volumes to share the sql file:
+
+```
+volumes:
+    - ./mysql/sample-db:/usr/local/src
+```
+
+you must import it via mysql command. 
 ```
 docker-compose exec mysql bash
 
@@ -40,7 +50,7 @@ Run the import command:
 mysql -uroot -psecret_password magento1 < /usr/local/src/magento1.sql
 ```
 
-Why **/usr/local/src/magento1.sql**? because in the **docker-compose.yml**:
+Why **/usr/local/src/magento1.sql**? because in the **docker-compose.yml** we put it into container and the path is **/usr/local/src**
 ```
 volumes:
     - ./mysql/sample-db:/usr/local/src
