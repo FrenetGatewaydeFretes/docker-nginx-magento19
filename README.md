@@ -22,9 +22,30 @@ Docker will build the containers and start them. You must also map the address _
 ### About phpmyadmin 
 
 Here you should create a database named **magento1**
-The container phpmyadmin should work, but if you have multiple containers use phpmyadmin, you might have some issus.
+
+The container phpmyadmin should work, but if you have multiple containers use phpmyadmin, you might have issue.
+
 For me, I can't make phpmyadmin installed. so I just go to https://www.phpmyadmin.net/downloads/ to download and put it into **/src**
-to make it work. of cource, if you install phpmyadmin in this way, just comment / remove the phpmyadmin container in the docker-compose.yml file.
+to make it work. 
+
+Of cource, if you install phpmyadmin in this way, just comment / remove the phpmyadmin container in the docker-compose.yml file.
+
+### Create database
+
+Here you should create a database named **magento1**
+
+If you want to install it by CLI:
+```
+docker-compose exec mysql bash
+
+```
+Then in the mysql container:
+```
+mysql -uroot -psecret_password
+>
+create database magento1;
+```
+But if not, 
 
 ### First access to project site
 
@@ -84,6 +105,7 @@ If you need to access the container terminal, use the following commands:
 
 - to see which are the running containers: `docker ps`
 - to connect to a container as root: `docker exec -it {container_name} bash`
+for example, into nginx container: `docker exec -it nginx bash`  (container name should be the name in docker-compose.yml)
 - to connect to a container as local user (1000): `docker exec -it --user local {container_name} bash`
 
 This last option is useful when you need to connect to the container and run an non root user (like when you need to run a console script).
