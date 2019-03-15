@@ -45,7 +45,7 @@ mysql -uroot -psecret_password
 >
 create database magento1;
 ```
-But if not, 
+
 
 ### First access to project site
 
