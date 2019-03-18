@@ -46,7 +46,7 @@ mysql:
 #  links:
 #  - mysql
 #  ports:
-#  - 8183:8080
+#  - 8183:80
 #  environment:
 #    PMA_USER: root
 #    PMA_PASSWORD: secret_password
