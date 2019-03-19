@@ -2,12 +2,12 @@ nginx:
   build: ./nginx/
   container_name: magento19_nginx
   ports:
-    - 80:80
+    - 20000:20000
   links:
     - phpfpm
   volumes:
     # app
-    - ../src:/var/www/html
+    - ../src:/var/www/html    
     # nginx configs
     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./nginx/conf.d/:/etc/nginx/conf.d/:ro

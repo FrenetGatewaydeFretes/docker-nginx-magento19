@@ -3,3 +3,4 @@
 /docker/mysql/data/*
 /docker/mysql/sample-db/*
 /src/local.m1docker.com/*
+/src/magento1.9.3.4-CE-with-sample-data/*

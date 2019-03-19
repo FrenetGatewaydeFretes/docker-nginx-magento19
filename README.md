@@ -87,6 +87,41 @@ volumes:
     - ./mysql/sample-db:/usr/local/src
 ```
 
+## Cloning [magento1.9.3.4-CE-with-sample-data](https://github.com/linxiaobo/magento1.9.3.4-CE-with-sample-data) inside src folder from [linxiaobo/docker-nginx-magento19](https://github.com/linxiaobo/docker-nginx-magento19)
+
+In my case was used the folder src/magento1.9.3.4-CE-with-sample-data/local.m1docker.com, so it´s possible configure the file local.m1docker.com.conf with new directory "/var/www/html/magento1.9.3.4-CE-with-sample-data/local.m1docker.com".
+
+``` bash
+
+cd src/ 
+
+git clone git@github.com:linxiaobo/magento1.9.3.4-CE-with-sample-data.git
+
+```
+
+### Configuring another port for Magento frontend and backend
+
+I needed develop an application asp.net debugging and testing in my Local IIS, then I got to do move docker-compose.yaml port nginx for 20000:20000 instead of 80:80. 
+
+So the url in configuration core_config_data table too moved to use new port 20000.
+
+``` powershell
+# Accessing mysql docker-compose 
+docker-compose exec mysql bash
+
+```
+
+``` bash 
+# Acessing mysql instance
+mysql -uroot -psecret_password magento1
+
+``` 
+
+``` sql 
+/* moving from http://m1.docker.local/ to http://m1.docker.local:20000/ */
+update core_config_data set value='http://m1.docker.local:20000/' where config_id in (1529, 1530);
+
+``` 
 
 ### Accessing Magento backend
 
@@ -99,7 +134,7 @@ BTW, if you want to change the password of admin, run this command in mysql cont
 I prefer admin/admin123:
 
 ```
-UPDATE admin_user SET `password` = md5('admin123'), is_active = 1 WHERE `username` = 'admin'
+UPDATE admin_user SET `password` = md5('admin123'), is_active = 1 WHERE `username` = 'admin';
 ```
 
 ### Accessing the container terminal
